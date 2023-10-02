@@ -1,0 +1,210 @@
+@import '../../../../../assets//commonStyles//vars_mixins';
+@import '../../../../../assets//commonStyles/modules/customInputs.module.scss';
+
+.photoNamePosition {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 45px;
+
+    @media(max-width:576px) {
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+.namePosition {
+    flex-grow: 1;
+
+    @media(max-width:576px) {
+        flex: 0 1 100%;
+    }
+}
+
+.subtitle {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 0px;
+
+    // @media(max-width: 576px){
+    //     font-size: 20px;
+    //     margin-top: 1.5rem;
+    // }
+}
+
+.contactsInputs,
+.orgInfoInputs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+
+    .inputGroup {
+        flex: 0 1 calc(50% - 15px);
+        margin-bottom: 0px;
+
+        @media(max-width:576px) {
+            flex: 0 1 100%;
+        }
+    }
+
+    .inputGroup:nth-child(2n-1) {
+        margin-right: 30px;
+
+        @media(max-width:576px) {
+            margin-right: 0px;
+        }
+    }
+}
+
+.inputGroup label {
+    font-size: 12px;
+}
+
+.inputGroup input {
+    height: 38px;
+}
+
+.contactsInputs {
+    margin-bottom: 20px;
+}
+
+
+
+.bigSubt {
+    font-size: 17px;
+    margin: 0px;
+    font-weight: 600;
+}
+
+.supervisorBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    @media(max-width: 576px) {
+        gap: 15px;
+    }
+}
+
+.subordinatesBlock {
+    display: flex;
+    // flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 45px;
+
+    .subordinatesItems {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    @media(max-width: 576px) {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+
+.subordSupervisorBlock,
+.addNew {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 6px 15px;
+    font-weight: 600;
+    border-radius: $border_r_small;
+    // cursor: pointer;
+    background-color: #183864;
+    color: $lgrey_clr;
+    letter-spacing: .5px;
+    font-size: 15px;
+    transition: $transition_val;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    flex-wrap: wrap;
+
+    svg {
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    @media(max-width: 576px) {
+        font-size: 13px;
+        gap: 7px;
+        padding: 6px 7px;
+    }
+}
+
+.supervisorBlock .subordSupervisorBlock {
+    background-color: $dblue_clr;
+}
+
+.subordinatesBlock .subordSupervisorBlock {
+    background-color: $lblue_clr;
+}
+
+.addNew {
+    background-color: #38A169;
+    gap: 10px;
+    cursor: pointer;
+    min-height: 44px;
+
+    svg {
+        font-size: 28px;
+
+    }
+
+    &:hover {
+        background-color: rgba($color: #38A169, $alpha: .9);
+    }
+}
+
+.sendBtn {
+    width: 100%;
+    background-color: $orange_clr;
+    gap: 30px;
+    margin-bottom: 10px;
+
+    &:hover {
+        background-color: rgba($color: $orange_clr, $alpha: .9);
+    }
+
+}
+
+.notifySubmit {
+    opacity: 0;
+    visibility: hidden;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    margin-bottom: -15px;
+    transition: $transition_val;
+
+    svg {
+        font-size: 20px;
+    }
+
+    &.succ {
+        color: #38A169;
+    }
+
+    &.err {
+        color: $err_clr;
+    }
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // opacity: 0;
+}

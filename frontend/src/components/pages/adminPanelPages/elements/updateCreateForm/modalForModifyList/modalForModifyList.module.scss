@@ -1,0 +1,146 @@
+@import '../../../../../../assets//commonStyles//vars_mixins';
+@import '../../../../../../assets/commonStyles/modules/customInputs.module.scss';
+
+.modalModifyList {
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $ddblue_clr, $alpha: .8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition_val;
+}
+
+.modalModifyList.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalContent {
+    position: relative;
+    padding: 50px 40px 5px 40px;
+    background-color: #fff;
+    width: 850px;
+    max-width: 100vw;
+    // height: 100vh;
+    max-height: 100vh;
+
+    box-shadow: $boxshadow_val;
+    overflow: hidden;
+
+    @media(max-width:576px) {
+        padding: 50px 25px 5px 25px;
+        overflow-y: auto;
+
+    }
+}
+
+.closeBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 27px;
+    padding: 3px;
+}
+
+.closeBtnMask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+// .title{
+//     margin-bottom: 10px;
+//     font-size: 18px;
+//     font-weight: 700;
+//     margin-bottom: 25px;
+// }
+
+
+.searchField {
+    position: relative;
+    margin-bottom: 25px;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        font-size: 25px;
+        transform: translateY(-50%);
+        line-height: 1;
+        transition: $transition_val;
+        color: $dblue_clr;
+    }
+
+    input {
+        padding-left: 45px;
+    }
+
+    input:focus-visible+svg {
+        color: $lblue_clr;
+    }
+}
+
+.employeeItems {
+    height: 400px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba($color: #000000, $alpha: .3);
+        border-radius: 3px;
+    }
+}
+
+.smallPreloaderWr {
+    height: 30px;
+}
+
+.errOnExpand {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $err_clr;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.errOnGetInitialPortion {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $err_clr;
+    font-weight: 600;
+}
+
+.noOne {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // color: $err_clr;
+    font-weight: 600;
+}
+
+
+

@@ -1,0 +1,71 @@
+@import '../../../assets/commonStyles/vars_mixins';
+
+.pagination {
+    user-select: none;
+
+    .pagUl {
+        list-style: none;
+        padding: 0px;
+        display: flex;
+
+        @media(max-width: 576px) {
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+    }
+
+
+
+    li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 12px;
+        border: 1px solid rgba($dblue_clr, .7);
+        color: rgba($dblue_clr, 1);
+        margin: 0px;
+        transition: .4s;
+        cursor: pointer;
+
+        @media(max-width: 576px) {
+            // padding: 5px 8px;
+            // font-size: 14px;
+        }
+
+        // @media(max-width: 400px) {
+        //     padding: 5px 5px;
+        //     font-size: 10px;
+        //     font-weight: 700;
+        // }
+
+    }
+
+    li:not(:last-child) a {
+        
+        @media(min-width: 576px) {
+            border-right: 0px solid transparent;
+        }
+    }
+
+    li:first-child a {
+        border-radius: 4px 0px 0px 4px;
+    }
+
+    li:last-child a {
+        border-radius: 0px 4px 4px 0px;
+    }
+
+    li.active a,
+    li.active a:hover {
+        background-color: rgba($dblue_clr, .2);
+        color: rgba($dblue_clr, 1);
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: rgba($dblue_clr, .1);
+        color: rgba($dblue_clr, 1);
+        text-decoration: none;
+    }
+
+}

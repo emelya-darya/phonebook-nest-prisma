@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// если есть вопросик, то может быть null
+
+model Employee {
+  employee_id  Int     @id @default(autoincrement())
+  name         String
+  photo        String?
+  position     String?
+  inner_phone  String?
+  mobile_phone String?
+  email        String?
+  city         String?
+  department   String?
+
+  company_id Int?
+  company    Company? @relation(fields: [company_id], references: [company_id], onDelete: SetNull, onUpdate: Cascade)
+
+  supervisor_id Int?
+  supervisor    Employee?  @relation("SupervisorSubordinates", fields: [supervisor_id], references: [employee_id], onDelete: SetNull, onUpdate: Cascade)
+  subordinates  Employee[] @relation("SupervisorSubordinates")
+
+  @@map("employees")
+}
+
+model Company {
+  company_id   Int        @id @default(autoincrement())
+  company_name String     @unique
+  employees    Employee[]
+
+  @@map("companies")
+}
+
+model Admin {
+  admin_id Int    @id @default(autoincrement())
+  login    String @unique
+  password String
+
+  tokens Token[]
+
+  @@map("admins")
+}
+
+model Token {
+  token_id      Int    @id @default(autoincrement())
+  refresh_token String @unique
+
+  admin_id Int
+  admin    Admin @relation(fields: [admin_id], references: [admin_id])
+
+  @@map("tokens")
+}

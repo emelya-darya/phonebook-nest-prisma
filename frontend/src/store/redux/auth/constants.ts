@@ -1,0 +1,13 @@
+export const SET_IS_IN_PROGRESS_CHECK_AUTH = 'forAuthData/SET_IS_IN_PROGRESS_CHECK_AUTH'
+
+export const SET_IS_IN_PROGRESS_LOG_IN = 'forAuthData/SET_IS_IN_PROGRESS_LOG_IN'
+
+export const SET_AUTH_DATA_ON_SUCCESS_AUTH = 'forAuthData/SET_AUTH_DATA_ON_SUCCESS_AUTH'
+
+export const CHECK_AUTH = 'forAuthData/CHECK_AUTH'
+
+export const TRY_LOGIN = 'forAuthData/TRY_LOGIN'
+
+export const SET_IS_AUTH_STATUS_CHECKED = 'forAuthData/SET_IS_AUTH_STATUS_CHECKED'
+
+export const REMOVE_AUTH_DATA_ON_ERR_AUTH = 'forAuthData/REMOVE_AUTH_DATA_ON_ERR_AUTH'

@@ -1,0 +1,71 @@
+@import '../../../../../../assets/commonStyles/vars_mixins';
+@import '../../../../../../assets//commonStyles/modules/customInputs.module.scss';
+
+
+.companyItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba($color: $dblue_clr, $alpha: .2);
+
+    &:first-child {
+        border-top: 1px solid rgba($color: $dblue_clr, $alpha: .2);
+    }
+}
+
+
+.createNewBtn {
+    background-color: $orange_clr;
+    text-decoration: none;
+    margin-top: 15px;
+    width: 100%;
+
+    svg {
+        font-size: 27px;
+    }
+
+    &:hover {
+        background-color: rgba($color: $orange_clr, $alpha: .9);
+        color: $lgrey_clr;
+        text-decoration: none;
+    }
+}
+
+
+.createNewForm {
+    .inputGroup {
+        flex-grow: 1;
+    }
+}
+
+.createNewForm {
+    .inputGroup {
+        margin-bottom: 0px;
+        width: 300px;
+    }
+
+    .inputGroup input {
+        height: 40px;
+    }
+
+}
+
+.saveNewBtn {
+    background-color: $orange_clr;
+    height: 41px;
+
+    &:hover {
+        background-color: rgba($color: $orange_clr, $alpha: .9);
+    }
+}
+
+.errOnAddCompany{
+    text-align: center;
+    color: $err_clr;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-size: 14px;
+}

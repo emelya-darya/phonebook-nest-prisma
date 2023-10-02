@@ -1,0 +1,171 @@
+@import '../../../../assets//commonStyles//vars_mixins';
+
+.empRow {
+    position: relative;
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.empRowMask {
+    opacity: 0;
+    visibility: hidden;
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $ddblue_clr, $alpha: .2);
+    transition: $transition_val;
+}
+
+.empRow:hover .empRowMask {
+    opacity: 1;
+    visibility: visible;
+}
+
+.empRow:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+.empRow {
+
+    .fio,
+    .position,
+    .innerPhone,
+    .email {
+        background-color: rgba($color: $dblue_clr, $alpha: .2);
+        padding: 5px 10px;
+        overflow: hidden;
+    }
+}
+
+.empRow:nth-child(2n) {
+
+    .fio,
+    .position,
+    .innerPhone,
+    .email {
+        background-color: rgba($color: $dblue_clr, $alpha: .1);
+    }
+}
+
+
+
+
+// .fio,
+// .position,
+// .innerPhone,
+// .email {
+//     background-color: rgba($color: #000000, $alpha: .1);
+//     padding: 5px 10px;
+//     overflow: hidden;
+// }
+
+.fio {
+    flex: 0 0 25%;
+
+}
+
+.position {
+    flex: 1 1 auto;
+}
+
+.innerPhone {
+    flex: 0 0 20%;
+}
+
+.email {
+    position: relative;
+    z-index: 7;
+    flex: 0 0 20%;
+
+    @media(max-width: 992px) {
+        flex: 0 0 25%;
+    }
+}
+
+
+
+.fio {
+    display: flex;
+    gap: 10px;
+}
+
+.avatarWr {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    background-color: $lgrey_clr;
+    // box-shadow: $boxshadow_val;
+
+    @include img-absolute;
+}
+
+.name {
+    margin: 0px;
+    font-weight: 600;
+}
+
+.email {
+    font-weight: 600;
+}
+
+.innerPhone {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 10px;
+
+    svg {
+        color: $lblue_clr;
+        display: inline-block;
+        margin-top:2px;
+    }
+}
+
+
+//!--------------------------------- Для маленького разрешения
+
+
+.empRowForSmall {
+    padding: 15px 0px 10px 0px;
+
+    &:not(:last-child) {
+        // margin-bottom: 20px;
+        border-bottom: 1px solid rgba($color: $ddblue_clr, $alpha: .7);
+    }
+
+    .subt {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .fioBlock {
+        margin-bottom: 15px;
+    }
+
+    .fioBlockContent {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .avatarWr {
+        box-shadow: $boxshadow_val;
+    }
+
+    // .name{
+    //     font-weight: normal;
+    // }
+
+    .positionBlock,
+    .innerPhoneBlock,
+    .emailBlock {
+        display: flex;
+        gap: 10px;
+    }
+
+}

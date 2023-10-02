@@ -1,0 +1,104 @@
+@import '../vars_mixins';
+
+.modalOnDelete {
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $ddblue_clr, $alpha: .8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition_val;
+}
+
+.modalOnDelete.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalContent {
+    position: relative;
+    padding: 50px 45px 20px 30px;
+    background-color: #fff;
+    width: 500px;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-y: auto;
+    box-shadow: $boxshadow_val;
+
+    @media(max-width:450px) {
+        padding: 35px 20px;
+
+    }
+}
+
+.closeBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 27px;
+    padding: 3px;
+}
+
+.closeBtnMask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    // background-color: red;
+}
+
+.lett {
+    margin-bottom: 40px;
+    font-size: 17px;
+
+    span {
+        font-weight: 600;
+        color: $dblue_clr;
+    }
+}
+
+.btns {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+.yesBtn,
+.noBtn {
+    width: 72px;
+}
+
+.yesBtn {
+    background-color: #38A169;
+
+    &:hover {
+        background-color: rgba($color: #38A169, $alpha: .8);
+    }
+}
+
+.noBtn {
+    background-color: $err_clr;
+
+    &:hover {
+        background-color: rgba($color: $err_clr, $alpha: .8);
+    }
+}
+
+.notify {
+    margin-top: 10px;
+    // font-style: italic;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    color: $err_clr;
+}

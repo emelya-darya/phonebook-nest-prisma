@@ -1,0 +1,44 @@
+@import '../../../../../assets//commonStyles//vars_mixins';
+
+.footer {
+    position: relative;
+    z-index: 1;
+    background-color: $dblue_clr;
+    color: $lgrey_clr;
+    box-shadow: $boxshadow_val;
+    padding: 12px 0px;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+
+    @media(max-width: 450px) {
+        gap: 0px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.logoWr {
+    @include img-absolute;
+    aspect-ratio: 194/69;
+    height: 30px;
+
+    @media(max-width: 450px) {
+        display: none;
+    }
+
+}
+
+.footerContent p {
+    margin-bottom: 0px;
+    font-weight: 700;
+
+    @media(max-width: 450px) {
+        flex: 0 1 100%;
+        text-align: center;
+    }
+}

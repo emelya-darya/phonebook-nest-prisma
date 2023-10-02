@@ -1,0 +1,94 @@
+@import '../../../../assets//commonStyles//vars_mixins';
+@import '../../../../assets//commonStyles//modules/customInputs.module.scss';
+
+// .main {
+//     padding: 25px 0px 35px 0px;
+// }
+
+// .main__container {
+//     max-width: 1000px;
+// }
+
+.searchSelectWr {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin-bottom: 8px;
+
+    @media(max-width: 768px){
+        gap: 8px;
+    }
+}
+
+.searchField {
+    position: relative;
+    flex-grow: 1;
+    height: 38px;
+
+    @media(max-width: 768px){
+        flex: 1 1 100%;
+    }
+   
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        font-size: 25px;
+        transform: translateY(-50%);
+        line-height: 1;
+        transition: $transition_val;
+        color: $dblue_clr;
+    }
+
+    input {
+        padding-left: 45px;
+        height: 38px;
+    }
+
+    input:focus-visible+svg {
+        color: $lblue_clr;
+    }
+}
+
+.inputGroup{
+    margin-bottom: 0px;
+}
+
+.paginatorWr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errOnLoadEmps,
+.noitems {
+    min-height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.errOnLoadEmps {
+    color: $err_clr;
+}
+
+.createNewBtn {
+    background-color: $orange_clr;
+    text-decoration: none;
+    margin-top: 15px;
+
+    svg {
+        font-size: 27px;
+    }
+
+    &:hover {
+        background-color: rgba($color: $orange_clr, $alpha: .9);
+        color: $lgrey_clr;
+        text-decoration: none;
+    }
+}

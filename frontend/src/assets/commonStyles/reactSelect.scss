@@ -1,0 +1,86 @@
+@import './vars_mixins';
+
+//! стилизация react-select
+
+
+
+.custom-select__container {
+    position: relative;
+    z-index: 12;
+    padding: 0px;
+    width: 350px;
+    max-width: 350px;
+    margin: 0px;
+
+    @media(max-width:500px) {
+        // min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.input-group{
+    .custom-select__container{
+        width: 100% !important;
+        max-width: 100%;
+
+        input{
+            height: auto !important;
+            box-shadow: 0px 0px 0px transparent !important;
+        }
+    }  
+}
+
+.custom-select {
+    transition: $transition_val !important;
+
+    &__control {
+        background-color: #fff !important;
+        border: 2px solid $dblue_clr !important;
+        border-radius: $border_r_small !important;
+        //  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4) !important;
+         box-shadow: 0px 0px 0px transparent !important;
+        height: 38px !important;
+        // min-height: 0px !important;
+
+
+    }
+
+    &__control--menu-is-open {
+        border: 2px solid $orange_clr !important;
+        box-shadow: 2px 2px 5px rgba($color: $orange_clr, $alpha: .4) !important;
+    }
+
+    &__value-container {
+        cursor: text !important;
+    }
+
+    &__indicators {
+        cursor: pointer !important;
+    }
+
+    &__menu {
+        // padding: 0px 3px !important;
+        border-radius: $border_r_small !important;
+        background-color: #fff !important;
+        border: 2px solid $dblue_clr !important;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4) !important;
+        // @include thin-grey-scrollbar
+    }
+
+    &__option {
+        cursor: pointer !important;
+        height: 38px !important;
+        white-space: nowrap !important;
+    }
+
+    &__option--is-focused {
+        background-color: rgba($color: $lblue_clr, $alpha: .1) !important;
+    }
+
+    &__option--is-selected {
+        background-color: $dblue_clr !important;
+        color: #fff !important;
+    }
+
+}

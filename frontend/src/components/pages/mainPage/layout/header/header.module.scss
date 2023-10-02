@@ -1,0 +1,146 @@
+@import '../../../../../assets//commonStyles//vars_mixins';
+
+.header {
+    position: relative;
+    z-index: 1;
+    background-color: $dblue_clr;
+    color: $lgrey_clr;
+    box-shadow: $boxshadow_val;
+    padding: 12px 0px;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+
+    @media(max-width: 400px) {
+        gap: 15px;
+    }
+}
+
+.logoWr {
+    @include img-absolute;
+    aspect-ratio: 194/69;
+    height: 50px;
+
+    @media(max-width: 400px) {
+        height: 20px;
+    }
+
+}
+
+.rightPart {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
+}
+
+.searchFieldBlock {
+
+    position: relative;
+    flex-grow: 1;
+    max-width: 400px;
+    height: 40px;
+    // border-radius: 17px;
+
+    input {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: $border_r_small;
+        padding-left: 40px;
+        border: 3px solid #fff;
+        outline: 0px solid transparent;
+        transition: $transition_val;
+    }
+
+    input:hover,
+    input:focus-visible {
+        border: 3px solid $orange_clr;
+        outline: 0px solid transparent;
+        // box-shadow: 2px 2px 5px rgba($color: $orange_clr, $alpha: .3) !important;
+
+    }
+
+    input+svg {
+        transition: $transition_val;
+        color: $dblue_clr;
+    }
+
+    input:hover+svg,
+    input:focus-visible+svg {
+        color: $orange_clr;
+    }
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        color: $ddblue_clr;
+        font-size: 25px;
+    }
+}
+
+.rightPart a.linkToAdmin {
+    // flex-grow: 1;
+    height: 40px;
+    max-width: 40px;
+    min-width: 40px;
+
+    padding: 0px;
+    background-color: $orange_clr;
+    // transition: .9s;
+    overflow: hidden;
+    gap: 8px;
+
+    svg {
+        flex: 0 0 25px;
+        font-size: 25px;
+        display: inline-block;
+        transform: translateX(-4px);
+        transition: $transition_val;
+    }
+
+    span {
+        // display: none;
+        opacity: 0;
+        visibility: hidden;
+        width: 0px;
+        transition: .1s;
+        // transition:$transition_val;
+    }
+
+    &:hover {
+        background-color: rgba($color: $orange_clr, $alpha: .9);
+        color: $lgrey_clr;
+        text-decoration: none;
+
+        @media (hover: hover) {
+            /* ... */
+
+            max-width: 105px;
+            min-width: 105px;
+            padding: 0px 12px;
+
+            span {
+                // display: inline-block;
+                opacity: 1;
+                visibility: visible;
+                width: auto;
+            }
+
+            svg {
+
+                transform: translateX(0px)
+            }
+        }
+    }
+}

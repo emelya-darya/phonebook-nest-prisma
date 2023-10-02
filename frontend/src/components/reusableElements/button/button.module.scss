@@ -1,0 +1,34 @@
+@import '../../../assets//commonStyles/vars_mixins';
+
+
+.btn {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 8px 20px;
+    font-weight: 600;
+    border-radius: $border_r_small;
+    cursor: pointer;
+    background-color: $dblue_clr;
+    color: $lgrey_clr;
+    letter-spacing: .5px;
+    font-size: 17px;
+    transition: $transition_val;
+    border: 0px solid transparent;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+    svg {
+        font-size: 20px;
+    }
+}
+
+.btn:hover {
+    background-color: rgba($color: $dblue_clr, $alpha: .9);
+}
+
+.btn:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}

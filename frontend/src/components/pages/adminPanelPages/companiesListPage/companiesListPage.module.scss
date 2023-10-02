@@ -1,0 +1,39 @@
+@import '../../../../assets//commonStyles//vars_mixins';
+@import '../../../../assets//commonStyles/modules/customInputs.module.scss';
+
+.backBtn {
+    flex-direction: row-reverse;
+    color: $lgrey_clr;
+    max-width: 400px;
+    white-space: nowrap;
+    margin-bottom: 30px;
+    margin-left: auto;
+
+    @media(max-width:576px) {
+        font-size: 13px;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 35px;
+    }
+}
+
+.backBtn:hover {
+    color: $lgrey_clr;
+    text-decoration: none;
+}
+
+.errOnGetList,
+.noitems {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.errOnGetList {
+    color: $err_clr;
+}
+

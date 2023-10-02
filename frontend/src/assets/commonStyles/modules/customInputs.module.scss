@@ -1,0 +1,63 @@
+@import '../vars_mixins';
+
+.inputGroup {
+    margin-bottom: 8px;
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 3px;
+        font-size: 13px;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        padding: 6px 15px;
+        border-radius: $border_r_small;
+        outline: 0px solid transparent;
+        border: 2px solid $dblue_clr;
+        transition: $transition_val;
+        // box-shadow: $boxshadow_val;
+
+    }
+
+    input:focus-visible,
+    input:focus {
+        border: 2px solid $lblue_clr;
+        outline: 0px solid transparent;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .spanErr {
+        opacity: 0;
+        visibility: hidden;
+        display: block;
+        color: $err_clr;
+        font-size: 10px;
+        font-weight: 600;
+        margin-top: 3px;
+        height: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.inputGroup.withError {
+
+    label {
+        color: $err_clr;
+    }
+
+    input,
+    input:focus-visible,
+    input:focus {
+        border: 2px solid $err_clr;
+    }
+
+    .spanErr {
+        opacity: 1;
+        visibility: visible;
+
+    }
+}

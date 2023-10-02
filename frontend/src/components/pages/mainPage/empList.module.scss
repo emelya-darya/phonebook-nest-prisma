@@ -1,0 +1,80 @@
+@import '../../../assets//commonStyles//vars_mixins';
+
+@import './employeItem//empItem.module.scss';
+
+.main{
+    padding-top: 25px;
+}
+
+.empBlock {
+    position: relative;
+    width: 100%;
+}
+
+.selectWr{
+    display: flex;
+    // justify-content: end;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+
+    p{
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    @media(max-width: 500px){
+        gap: 5px;
+    }
+}
+
+
+
+.empRow.titleEmpRow {
+    position: sticky;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    height: auto;
+
+
+    .fio,
+    .position,
+    .innerPhone,
+    .email {
+        background-color: rgba($color: $ddblue_clr, $alpha: 1);
+        // padding: 8px 20px;
+        padding: 8px 10px;
+        color: $lgrey_clr;
+        font-weight: 600;
+        // font-size: 17px;
+    }
+}
+
+.paginatorWrTop,
+.paginatorWrBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.paginatorWrBottom {
+    padding: 20px 0px 10px 0px;
+}
+
+.errOnLoadEmps,
+.noitems {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+
+}
+
+.errOnLoadEmps {
+    color: $err_clr;
+}

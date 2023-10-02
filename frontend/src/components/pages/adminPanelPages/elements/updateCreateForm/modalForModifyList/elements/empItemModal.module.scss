@@ -1,0 +1,87 @@
+@import '../../../../../../../assets/commonStyles/vars_mixins';
+
+
+.empItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 7px 0px;
+    margin-right: 20px;
+    border-bottom: 1px solid rgba($color: $dblue_clr, $alpha: .2);
+
+    &:first-child {
+        border-top: 1px solid rgba($color: $dblue_clr, $alpha: .2);
+    }
+
+    
+}
+
+.namePosition{
+    @media(max-width: 576px){
+        flex: 0 1 100%;
+    }
+}
+
+.name {
+    font-weight: 600;
+    color: $dblue_clr;
+}
+
+.position {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.inactButt {
+    height: 40px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 15px;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: $border_r_small;
+    background-color: rgba($color: $dblue_clr, $alpha: .2);
+    cursor: not-allowed;
+
+    @media(max-width: 576px){
+        margin-left: auto;
+    }
+}
+
+.addBtn,
+.deleteBtn {
+    width: 130px;
+    height: 40px;
+    padding: 7px 15px;
+    font-size: 15px;
+    // width: auto;
+    gap: 7px;
+
+    svg {
+        font-size: 25px;
+    }
+
+    @media(max-width: 576px){
+        margin-left: auto;
+    }
+}
+
+.deleteBtn {
+    background-color: $err_clr;
+
+    &:hover {
+        background-color: rgba($color: $err_clr, $alpha: .8);
+    }
+}
+
+.addBtn {
+    background-color: #38A169;
+
+    &:hover {
+        background-color: rgba($color: #38A169, $alpha: .8);
+    }
+}
